@@ -1,25 +1,25 @@
 <?php
 function convert_to_csv($input_array, $output_file_name, $delimiter)
 {
-   /** open raw memory as file, no need for temp files, be careful not to run out of memory thought */
-   $f = fopen('php://memory', 'w');
-   /** loop through array  */
-   foreach ($input_array as $line) {
-      /** default php csv handler **/
-      fputcsv($f, $line, $delimiter);
-   }
-   /** rewrind the "file" with the csv lines **/
-   fseek($f, 0);
-   /** modify header to be downloadable csv file **/
-   header('Content-Type: application/csv');
-   header('Content-Disposition: attachement; filename="' . $output_file_name . '";');
-   /** Send file to browser for download */
-   fpassthru($f);
+    /** open raw memory as file, no need for temp files, be careful not to run out of memory thought */
+    $f = fopen('php://memory', 'w');
+    /** loop through array  */
+    foreach ($input_array as $line) {
+        /** default php csv handler **/
+        fputcsv($f, $line, $delimiter);
+    }
+    /** rewrind the "file" with the csv lines **/
+    fseek($f, 0);
+    /** modify header to be downloadable csv file **/
+    header('Content-Type: application/csv');
+    header('Content-Disposition: attachement; filename="' . $output_file_name . '";');
+    /** Send file to browser for download */
+    fpassthru($f);
 }
 
 /** Array to convert to csv */
 // $array_to_csv = Array(
-        
+
 //         Array($id,
 //           $name,
 //           $email
@@ -36,14 +36,14 @@ function convert_to_csv($input_array, $output_file_name, $delimiter)
 
 function create_date($created) {
 
-  $insta_date = $created;
-  $offset = 7*60*60;    // 7 hours off from GST
-  $t12 =  gmdate('Y-m-d H:i:s', $insta_date-$offset);
-  $d = gmdate('m-d-Y', $insta_date-$offset);
-  // print "Date/Time = ".gmdate('m-d-Y H:i:s', $insta_date-$offset);
-  $dte = $d." (".date("g:i a", strtotime("$t12")).")";
+    $insta_date = $created;
+    $offset = 7*60*60;    // 7 hours off from GST
+    $t12 =  gmdate('Y-m-d H:i:s', $insta_date-$offset);
+    $d = gmdate('m-d-Y', $insta_date-$offset);
+    // print "Date/Time = ".gmdate('m-d-Y H:i:s', $insta_date-$offset);
+    $dte = $d." (".date("g:i a", strtotime("$t12")).")";
 
-  return $dte;
+    return $dte;
 
 }
 
@@ -65,7 +65,7 @@ function scrape_flora($plant) {
     $humidity= $plant->getHumidity();
     $notes= $plant->getNotes();
 
-     return Array (
+    return Array (
         $id,
         $date,
         $name,
@@ -81,7 +81,7 @@ function scrape_flora($plant) {
         $wind,
         $humidity,
         $notes
-       );
+    );
 }
 
 $ret = array(
@@ -105,14 +105,10 @@ $ret = array(
     )
 );
 
-
-
 foreach($plants as $plant) {
-  $ret[] = scrape_flora($plant);
-  //var_dump(scrape_flora($plant));
+    $ret[] = scrape_flora($plant);
+    //var_dump(scrape_flora($plant));
 }
-
-
 
 $array_to_csv = $ret;
 convert_to_csv($array_to_csv, 'flora_report.csv', ',');

@@ -4,7 +4,7 @@
  * Plant Object
  */
 class Plant{
-  
+
   private $_id;
   private $_name;
   private $_created;
@@ -27,10 +27,10 @@ class Plant{
 
   public function getCreated(){return $this->_created;}
   public function setCreated($arg){$this->_created = $arg;}
-  
+
   public function getName(){return $this->_name;}
   public function setName($arg){$this->_name = $arg;}
-  
+
   public function getLocation(){return $this->_location;}
   public function setLocation($arg){$this->_location = $arg;}
 
@@ -38,16 +38,16 @@ class Plant{
   public function setLongitude($arg){$this->_longitude = $arg;}
 
   public function getLatitude(){return $this->_latitude;}
-  public function setLatitude($arg){$this->_latitude = $arg;}        
-  
+  public function setLatitude($arg){$this->_latitude = $arg;}
+
   public function getUserId(){return $this->_userid;}
-  public function setUserId($arg){$this->_userid = $arg;}  
+  public function setUserId($arg){$this->_userid = $arg;}
 
   public function getWeatherId(){return $this->_weatherid;}
-  public function setWeatherId($arg){$this->_weatherid = $arg;} 
+  public function setWeatherId($arg){$this->_weatherid = $arg;}
 
   public function getWeather(){return $this->_weather;}
-  public function setWeather($arg){$this->_weather = $arg;} 
+  public function setWeather($arg){$this->_weather = $arg;}
 
   public function getSoilId(){return $this->_soilid;}
   public function setSoilId($arg){$this->_soilid = $arg;}
@@ -67,7 +67,7 @@ class Plant{
   public function getNotes(){return $this->_notes;}
   public function setNotes($arg){$this->_notes = $arg;}
 
-    
+
 
 
   public function hydrate($arr) {
@@ -87,6 +87,6 @@ class Plant{
     $this->setHumidity(isset($arr["humidity"])?$arr["humidity"]:'');
     $this->setNotes(isset($arr["notes"])?$arr["notes"]:'');
   }
-  
+
 }
 

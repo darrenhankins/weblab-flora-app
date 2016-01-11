@@ -4,7 +4,7 @@
  * User Object
  */
 class User{
-  
+
   private $_id;
   private $_name;
   private $_email;
@@ -13,7 +13,7 @@ class User{
 
   public function getId(){return $this->_id;}
   public function setId($arg){$this->_id = $arg;}
-  
+
   public function getName(){return $this->_name;}
   public function setName($arg){$this->_name = $arg;}
 
@@ -30,20 +30,20 @@ class User{
   //     //return FALSE;
   //   }
   // }
-  
+
   public function getPassword(){return $this->_pass;}
   public function setPassword($arg){$this->_pass = $arg;}
-         
+
   public function getRole(){return $this->_role;}
-  public function setRole($arg){$this->_role = $arg;}  
-  
+  public function setRole($arg){$this->_role = $arg;}
+
   // public function isAdmin(){
   //   if ($this->_role == 1) {
   //     return TRUE;
   //   }
   //   return FALSE;
   // }
-    
+
   // public function isValidEmail(){
   //   // Validate email
   //   if (!filter_var($this->_mail, FILTER_VALIDATE_EMAIL) === false) {
@@ -64,6 +64,6 @@ class User{
     //$this->setCreated(isset($arr["created"])?$arr["created"]:'');
     $this->setRole(isset($arr["role"])?$arr["role"]:'');
   }
-  
+
 }
 
