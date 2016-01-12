@@ -1,4 +1,4 @@
-# flora-app
+# Flora-App
 Weblab Class Project
 
 ##DARREN HANKINS
