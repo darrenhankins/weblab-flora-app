@@ -59,3 +59,4 @@ crashlytics-build.properties
 *.ini
 
 /tests
+/.idea
