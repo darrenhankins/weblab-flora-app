@@ -57,6 +57,9 @@ crashlytics-build.properties
 # Created by .ignore support plugin (hsz.mobi)
 
 *.ini
+<<<<<<< HEAD
 
-/tests
+
 /.idea
+=======
+>>>>>>> parent of a789f40... Config file example created
