@@ -3,7 +3,7 @@ include_once('../includes/openweather-api.php');
 
 if (!isset($_GET["geo"])) {
 
-    $url = "http://api.openweathermap.org/data/2.5/weather?lat=".$_GET['lat']."&lon=".$_GET['lon']."&mode=json&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
+    $url = "http://api.openweathermap.org/data/2.5/weather?lat=".$_GET['lat']."&lon=".$_GET['lon']."&mode=json&appid=e7c472fcd19194f20a1f1fbc010e5a7e&units=imperial";
 
     $response = request($url,null, "GET");
     $temp = ceil($response->main->temp);

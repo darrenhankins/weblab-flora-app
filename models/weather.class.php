@@ -18,11 +18,11 @@ final class Weather
 		return $inst;
 	}
 
-	private $dataSource;// = 'Local Cache';   
+	private $dataSource;// = 'Local Cache';
 	private $cacheTimeLimit;// =10;
 	private $lastCacheTime;// = 0;
-	private $urlBase;// = 'api.openweathermap.org/data/2.5/weather?APPID='; 	
-	private $defaultZip;// = 80524;   
+	private $urlBase;// = 'api.openweathermap.org/data/2.5/weather?APPID=';
+	private $defaultZip;// = 80524;
 	private $currentTempF;// = 0;
 
 
@@ -35,7 +35,7 @@ final class Weather
 		$this->defaultZip = 80524;
 		$this->currentTempF = 99;
 		//retrieve key from config file
-		$apikey = '2d140a6aa717e403bff469810b80e225'; //put in config file		
+		$apikey = 'e7c472fcd19194f20a1f1fbc010e5a7e'; //put in config file		
 		$this->urlBase .= $apikey;
 	}
 

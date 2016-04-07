@@ -2,10 +2,14 @@
 
 include('../includes/openweather-api.php');
 
+// **************************************************************************************************
+// ***** THIS IS AN EXAMPLE ONLY, FOR THE APPLICATION, THIS IS LOCATED IN THE WEATHER.CLASS.PHP *****
+// **************************************************************************************************
+
 // if($_SERVER['REQUEST_METHOD'] == "POST"){
 //$url = "http://api.openweathermap.org/data/2.5/forecast?q=".urlencode($_POST['city'])."&mode=json&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
 //$url = "http://api.openweathermap.org/data/2.5/weather?q=".urlencode($_POST['city'])."&mode=json&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
-$url = "http://api.openweathermap.org/data/2.5/weather?lat=".$_GET['lat']."&lon=".$_GET['lon']."&mode=json&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
+$url = "http://api.openweathermap.org/data/2.5/weather?lat=".$_GET['lat']."&lon=".$_GET['lon']."&mode=json&appid=e7c472fcd19194f20a1f1fbc010e5a7e&units=imperial";
 $response = request($url,null, "GET");
 //print "<pre>".print_r($response->list[0]->main->temp, true)."</pre>";
 print "Longitude = ".$response->coord->lon."<br>";
@@ -37,9 +41,9 @@ print "<pre>".print_r($response,true)."</pre>";
 
 // $data_source = 'Local Cache';
 // $current_time = time();
-// $zip = 80538;      
+// $zip = 80538;
 // $cache_time = 10;
-// $url = 'api.openweathermap.org/data/2.5/weather?zip='.$zip.',us'; 
+// $url = 'api.openweathermap.org/data/2.5/weather?zip='.$zip.',us';
 // $url = $url . '&APPID=7d7fffe39e7c66965aaf15016448d3e8';
 
 // $db = new Db();
@@ -75,4 +79,3 @@ print "<pre>".print_r($response,true)."</pre>";
 // }
 
 // echo "Current Temp: " . $current_temp_f . "&deg; Fahrenheit from " . $data_source;
-
