@@ -3,14 +3,14 @@ Weblab Class Project
 
 http://dphankins.com/weblab-flora-app/index.php
 
-##DARREN HANKINS
+## DARREN HANKINS
 
-##FLORA DATABASE PROJECT
+## FLORA DATABASE PROJECT
 
-###PROJECT SCOPE
+### PROJECT SCOPE
 Build responsive web UI open to the public, allowing users the ability to submit plant data (see DELIVERABLES) gathered at plant site location. Provide administrative end user the ability to view data in browser in a simple list format that can also be downloaded to a PDF or Excel file.
 
-###DELIVERABLES
+### DELIVERABLES
 Responsive user data entry form will include the following:
 1.     Name Individual
 ◦      User input field (1)
@@ -30,7 +30,7 @@ Responsive user data entry form will include the following:
 8.     Notes
 ◦      User input field
  
-###Administrative access point
+### Administrative access point
 
 1.     Password protected area (.htaccess)
 ◦      universal user name / password
@@ -38,9 +38,9 @@ Responsive user data entry form will include the following:
 3.     List order by database entry date
 4.     Downloadable format (PDF or Excel format)
  
-###SOLUTION
-####Data Collection
+### SOLUTION
+#### Data Collection
 Utilize HTML5, PHP and JavaScript to create a responsive UI form for data submission to a MySQL database.
-####Data Retrieval 
+#### Data Retrieval 
 Utilize .htaccess to secure administrative access point with generic user name and password. Utilize PHP to retrieve current data from the MySQL database. Utilize HTML and PHP to create a responsive UI list of the data with the ability to download data into a PDF or Excel format.
 
