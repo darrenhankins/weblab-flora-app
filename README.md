@@ -42,11 +42,11 @@ Build responsive web UI open to the public, allowing users the ability to submit
 
 ### Administrative access point
 
-1.     Password protected area (.htaccess)
+- Password protected area (.htaccess)
   - universal user name / password
-2.     Responsive design
-3.     List order by database entry date
-4.     Downloadable format (PDF or Excel format)
+- Responsive design
+- List order by database entry date
+- Downloadable format (PDF or Excel format)
 
 ### Solution
 #### Data Collection
