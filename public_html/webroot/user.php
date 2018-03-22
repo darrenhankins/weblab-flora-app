@@ -1,11 +1,12 @@
 <?php
+$dir = '../../private';
 
-require_once('../lib/db.interface.php');
-require_once('../lib/db.class.php');
-require_once('../models/user.class.php');
-require_once('../models/plant.class.php');
-require_once('../models/manager.abstract.php');
-require_once('../models/user_manager.class.php');
+require_once($dir.'/lib/db.interface.php');
+require_once($dir.'/lib/db.class.php');
+require_once($dir.'/models/user.class.php');
+require_once($dir.'/models/plant.class.php');
+require_once($dir.'/models/manager.abstract.php');
+require_once($dir.'/models/user_manager.class.php');
 // Uncomment the below line (and line in login.php) to enable db session store
 //require_once('../lib/db_session_store.php');
 
@@ -56,13 +57,13 @@ switch ($action) {
     $error = $userManager->save($user);
     //var_dump($user);
     // header('Location: index.php');
-    include('../views/register_success.php');
+    include($dir.'/views/register_success.php');
     break;
 
   case 'account':
     $userManager = new UserManager();
     $user = $userManager->getUser($target);
-    include('../views/user_view.php');
+    include($dir.'/views/user_view.php');
     break;
 
   // case 'user_edit':
@@ -81,20 +82,20 @@ switch ($action) {
   case 'export':
     $userManager = new UserManager();
     $plants = $userManager->exportFlora();
-    include('../views/export.php');
+    include($dir.'/views/export.php');
     break;
 
   case 'my_flora':
     $target = $_SESSION['current_user'];
     $userManager = new UserManager();
     $plants = $userManager->getAllUserPlants($target);
-    include('../views/user_plants.php');
+    include($dir.'/views/user_plants.php');
     break;
 
   case 'all_flora':
     $userManager = new UserManager();
     $plants = $userManager->getAllPlants();
-    include('../views/all_plants.php');
+    include($dir.'/views/all_plants.php');
     break;
 
   case 'save_flora':
@@ -121,29 +122,26 @@ switch ($action) {
     $target = $_SESSION['current_user'];
     $userManager = new UserManager();
     $plants = $userManager->getAllUserPlants($target);
-    include('../views/user_plants.php');
+    include($dir.'/views/user_plants.php');
     break;
 
 
   case 'add_flora':
     //$userManager = new UserManager();
     //$plant = new Plant();
-    include('../views/user_add_plant.php');
+    include($dir.'/views/user_add_plant.php');
     break;
 
   case 'geo_finder':
     //$userManager = new UserManager();
     //$plant = new Plant();
-    include('../views/geo_finder.php');
+    include($dir.'/views/geo_finder.php');
     break;
 
   default:
     $userManager = new UserManager();
     $user = $userManager->getUser($target);
-    include('../views/user_view.php');
+    include($dir.'/views/user_view.php');
     break;
 }
 ?>
- 
-
-

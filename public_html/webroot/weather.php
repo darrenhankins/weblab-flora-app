@@ -1,6 +1,6 @@
 <?php
 
-include('../includes/openweather-api.php');
+include('../../private/includes/openweather-api.php');
 
 // **************************************************************************************************
 // ***** THIS IS AN EXAMPLE ONLY, FOR THE APPLICATION, THIS IS LOCATED IN THE WEATHER.CLASS.PHP *****

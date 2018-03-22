@@ -1,13 +1,15 @@
 <?php
 
-require_once('../lib/db.interface.php');
-require_once('../lib/db.class.php');
-require_once('../models/user.class.php');
-require_once('../models/plant.class.php');
-require_once('../models/manager.abstract.php');
-require_once('../models/user_manager.class.php');
+$dir = '../../private';
+
+require_once($dir.'/lib/db.interface.php');
+require_once($dir.'/lib/db.class.php');
+require_once($dir.'/models/user.class.php');
+require_once($dir.'/models/plant.class.php');
+require_once($dir.'/models/manager.abstract.php');
+require_once($dir.'/models/user_manager.class.php');
 // Uncomment the below line (and line in user.php) to enable db session store
-//require_once('../lib/db_session_store.php');
+//require_once($dir.'lib/db_session_store.php');
 
 //var_dump($_SESSION['current_user']);
 if(!isset($_SESSION['current_user'])){
@@ -45,7 +47,7 @@ switch ($action) {
 
   case 'login':
     //$error = '';
-    include('../views/login.php');
+    include($dir.'/views/login.php');
     break;
 
   case 'login_check':
@@ -63,22 +65,22 @@ switch ($action) {
       // store $user object in $_SESSION
       $_SESSION['current_user'] = $user;
       // var_dump($_SESSION['current_user']);
-      include('../views/login_success.php');
+      include($dir.'/views/login_success.php');
     } else {
       //var_dump($action);
       //var_dump($user);
       //$error_msg[] = 'Username or Password incorrect.';
       //$error = 'Username or Password incorrect.';
       //header('Location: index.php?action=login');
-      include('../views/login.php');
+      include($dir.'/views/login.php');
     }
     break;
 
   case 'register':
     $userManager = new UserManager();
-    $roles = $userManager->getAllRoles();
+    // $roles = $userManager->getAllRoles();
     $user = new User();
-    include('../views/register.php');
+    include($dir.'/views/register.php');
     break;
 
   default:
@@ -88,6 +90,3 @@ switch ($action) {
 }
 
 ?>
-
-
-
