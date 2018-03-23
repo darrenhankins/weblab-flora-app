@@ -1,4 +1,0 @@
-host = localhost
-username = root
-password = database_password
-dbname = database_name
